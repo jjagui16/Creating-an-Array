@@ -40,6 +40,13 @@ function showGames() {
         // Open the paragraph
         gameInfo += "<p>"
 
+        // Display the game location
+        if (gameLocations[i] === "h") {
+            gameInfo += "vs. ";
+        } else if (gameLocations[i] === "a") {
+            gameInfo += "@ ";
+        }
+
         // Include the opponet
         gameInfo += gameOpponents[i] + "<br>";
 

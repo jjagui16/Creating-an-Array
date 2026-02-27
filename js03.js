@@ -29,3 +29,28 @@ function addWeekdays() {
     i++;
     }
 }
+
+window.addEventListener("load", showGames);
+
+// Function to write game information into the calendar
+function showGames() {
+    for (let i = 0; i < gameDates.length; i++) {
+        let gameInfo = "";
+
+        // Open the paragraph
+        gameInfo += "<p>"
+
+        // Include the opponet
+        gameInfo += gameOpponents[i] + "<br>";
+
+        // Include the results and score
+        gameInfo += gameResults[i] + ": (" + runsScored[i] + " - " + runsAllowed[i] + ")";
+
+        // Close the paragraph
+        gameInfo += "</p>";
+
+        // Write the infromation on a table cell 
+        let tableCell = document.getElementById(gameDates[i]);
+        tableCell.insertAdjacentHTML("beforeEnd", gameInfo)
+    }
+}
